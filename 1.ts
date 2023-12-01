@@ -1009,7 +1009,7 @@ const x = [
   "zoneight234",
   "7pqrstsixteen",
 ];
-const x2 = ["2lbroneightthree3ninefournineone","one","22"];
+const x2 = ["2lbroneightthree3ninefournineone", "one", "22"];
 
 function internal(t: string) {
   var pos = 0;
@@ -1164,7 +1164,25 @@ function func(input: string[]) {
   return total;
 }
 
-console.log(input.map(x => x.replace(/one/g, "one1one").replace(/two/g, "two2two").replace(/three/g, "three3three").replace(/four/g, "four4four").replace(/five/g, "five5five").replace(/six/g, "six6six").replace(/seven/g, "seven7seven").replace(/eight/g, "eight8eight").replace(/nine/g, "nine9nine").replace(/\D/g, "")).map(x => x[0]+x[x.length - 1]).map(x => +x).reduce((partialSum, a) => partialSum + a, 0));
+console.log(
+  input
+    .map((x) =>
+      x
+        .replace(/one/g, "one1one")
+        .replace(/two/g, "two2two")
+        .replace(/three/g, "three3three")
+        .replace(/four/g, "four4four")
+        .replace(/five/g, "five5five")
+        .replace(/six/g, "six6six")
+        .replace(/seven/g, "seven7seven")
+        .replace(/eight/g, "eight8eight")
+        .replace(/nine/g, "nine9nine")
+        .replace(/\D/g, "")
+    )
+    .map((x) => x[0] + x[x.length - 1])
+    .map((x) => +x)
+    .reduce((partialSum, a) => partialSum + a, 0)
+);
 
 // console.log(f(input));
 // func(input);
