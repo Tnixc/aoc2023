@@ -1121,7 +1121,9 @@ console.log(total);
 // This is probably a very bad approach
 // what is the big O time complexity of this solution?
 /* 
-so we ave a loop that goes for the length of the array
+so we have a loop that goes for the length of the array
 then we have 2 loops that traverse the length of the string(assuming worst conditions) 
-Is this still O(N)  then?
+Is this still O(N) then because it only walks the entire array once?
+
+Pretty sure it is since we drop the constants. And we consider the length of the array not the strings I guess.
 */
