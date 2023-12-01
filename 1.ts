@@ -1010,132 +1010,130 @@ const x = [
   "7pqrstsixteen",
 ];
 const x2 = ["2lbroneightthree3ninefournineone"];
-
-function func(y: string[]) {
-  const input = y;
-  var total = 0;
-  function internal(t: string) {
-    var pos = 0;
-    for (var i = 0; i < t.length; i++) {
-      var curr = t.substring(pos, i);
-      if (
-        curr.includes("1") ||
-        curr.includes("2") ||
-        curr.includes("3") ||
-        curr.includes("4") ||
-        curr.includes("5") ||
-        curr.includes("6") ||
-        curr.includes("7") ||
-        curr.includes("8") ||
-        curr.includes("9")
-      ) {
-        break;
-      }
-      if (curr.includes("one")) {
-        t = t.replace("one", "1");
-        break;
-      }
-      if (curr.includes("two")) {
-        t = t.replace("two", "2");
-        break;
-      }
-      if (curr.includes("three")) {
-        t = t.replace("three", "3");
-        break;
-      }
-      if (curr.includes("four")) {
-        t = t.replace("four", "4");
-        break;
-      }
-      if (curr.includes("five")) {
-        t = t.replace("five", "5");
-        break;
-      }
-      if (curr.includes("six")) {
-        t = t.replace("six", "6");
-        break;
-      }
-      if (curr.includes("seven")) {
-        t = t.replace("seven", "7");
-        break;
-      }
-      if (curr.includes("eight")) {
-        t = t.replace("eight", "8");
-        break;
-      }
-      if (curr.includes("nine")) {
-        t = t.replace("nine", "9");
-        break;
-      }
+function internal(t: string) {
+  var pos = 0;
+  for (var i = 0; i < t.length; i++) {
+    var curr = t.substring(pos, i);
+    if (
+      curr.includes("1") ||
+      curr.includes("2") ||
+      curr.includes("3") ||
+      curr.includes("4") ||
+      curr.includes("5") ||
+      curr.includes("6") ||
+      curr.includes("7") ||
+      curr.includes("8") ||
+      curr.includes("9")
+    ) {
+      break;
     }
-    pos = t.length;
-    for (var j = t.length; j > 0; j--) {
-      var looking = t.substring(j, pos);
-      if (
-        looking.includes("1") ||
-        looking.includes("2") ||
-        looking.includes("3") ||
-        looking.includes("4") ||
-        looking.includes("5") ||
-        looking.includes("6") ||
-        looking.includes("7") ||
-        looking.includes("8") ||
-        looking.includes("9")
-      ) {
-        break;
-      }
-      if (looking.includes("one")) {
-        t = t.substring(0, t.lastIndexOf(looking)) + "1";
-        break;
-      }
-      if (looking.includes("two")) {
-        t = t.substring(0, t.lastIndexOf(looking)) + "2";
-        break;
-      }
-      if (looking.includes("three")) {
-        t = t.substring(0, t.lastIndexOf(looking)) + "3";
-        break;
-      }
-      if (looking.includes("four")) {
-        t = t.substring(0, t.lastIndexOf(looking)) + "4";
-        break;
-      }
-      if (looking.includes("five")) {
-        t = t.substring(0, t.lastIndexOf(looking)) + "5";
-        break;
-      }
-      if (looking.includes("six")) {
-        t = t.substring(0, t.lastIndexOf(looking)) + "6";
-        break;
-      }
-      if (looking.includes("seven")) {
-        t = t.substring(0, t.lastIndexOf(looking)) + "7";
-        break;
-      }
-      if (looking.includes("eight")) {
-        t = t.substring(0, t.lastIndexOf(looking)) + "8";
-        break;
-      }
-      if (looking.includes("nine")) {
-        t = t.substring(0, t.lastIndexOf(looking)) + "9";
-        break;
-      }
+    if (curr.includes("one")) {
+      t = t.replace("one", "1");
+      break;
     }
-    const newStr = t.replace(/\D/g, "");
-    var firstChar = newStr.substring(0, 1);
-    if (newStr.length > 1) {
-      var lastChar = newStr.substring(newStr.length - 1);
-      var combined = +`${firstChar}${lastChar}`;
-      // total += combined;
-      return combined;
+    if (curr.includes("two")) {
+      t = t.replace("two", "2");
+      break;
     }
-    if (newStr.length === 1) {
-      // total += +`${firstChar}${firstChar}`;
-      return +`${firstChar}${firstChar}`;
+    if (curr.includes("three")) {
+      t = t.replace("three", "3");
+      break;
+    }
+    if (curr.includes("four")) {
+      t = t.replace("four", "4");
+      break;
+    }
+    if (curr.includes("five")) {
+      t = t.replace("five", "5");
+      break;
+    }
+    if (curr.includes("six")) {
+      t = t.replace("six", "6");
+      break;
+    }
+    if (curr.includes("seven")) {
+      t = t.replace("seven", "7");
+      break;
+    }
+    if (curr.includes("eight")) {
+      t = t.replace("eight", "8");
+      break;
+    }
+    if (curr.includes("nine")) {
+      t = t.replace("nine", "9");
+      break;
     }
   }
+  pos = t.length;
+  for (var j = t.length; j > 0; j--) {
+    var looking = t.substring(j, pos);
+    if (
+      looking.includes("1") ||
+      looking.includes("2") ||
+      looking.includes("3") ||
+      looking.includes("4") ||
+      looking.includes("5") ||
+      looking.includes("6") ||
+      looking.includes("7") ||
+      looking.includes("8") ||
+      looking.includes("9")
+    ) {
+      break;
+    }
+    if (looking.includes("one")) {
+      t = t.substring(0, t.lastIndexOf(looking)) + "1";
+      break;
+    }
+    if (looking.includes("two")) {
+      t = t.substring(0, t.lastIndexOf(looking)) + "2";
+      break;
+    }
+    if (looking.includes("three")) {
+      t = t.substring(0, t.lastIndexOf(looking)) + "3";
+      break;
+    }
+    if (looking.includes("four")) {
+      t = t.substring(0, t.lastIndexOf(looking)) + "4";
+      break;
+    }
+    if (looking.includes("five")) {
+      t = t.substring(0, t.lastIndexOf(looking)) + "5";
+      break;
+    }
+    if (looking.includes("six")) {
+      t = t.substring(0, t.lastIndexOf(looking)) + "6";
+      break;
+    }
+    if (looking.includes("seven")) {
+      t = t.substring(0, t.lastIndexOf(looking)) + "7";
+      break;
+    }
+    if (looking.includes("eight")) {
+      t = t.substring(0, t.lastIndexOf(looking)) + "8";
+      break;
+    }
+    if (looking.includes("nine")) {
+      t = t.substring(0, t.lastIndexOf(looking)) + "9";
+      break;
+    }
+  }
+  const newStr = t.replace(/\D/g, "");
+  var firstChar = newStr.substring(0, 1);
+  if (newStr.length > 1) {
+    var lastChar = newStr.substring(newStr.length - 1);
+    var combined = +`${firstChar}${lastChar}`;
+    // total += combined;
+    return combined;
+  }
+  if (newStr.length === 1) {
+    // total += +`${firstChar}${firstChar}`;
+    return +`${firstChar}${firstChar}`;
+  }
+}
+function func(input: string[]) {
+  var total = 0;
   function newinternal(t: string) {
-    t = t
+    t = t // this is the part 2 solution
       .replace(/one/g, "one1one")
       .replace(/two/g, "two2two")
       .replace(/three/g, "three3three")
@@ -1150,27 +1148,28 @@ function func(y: string[]) {
     var firstChar = newStr.substring(0, 1);
     if (newStr.length > 1) {
       var lastChar = newStr.substring(newStr.length - 1);
-      var combined = +`${firstChar}${lastChar}`;
+      var combined = 10 * +firstChar + +lastChar;
       total += combined;
       return combined;
     }
     if (newStr.length === 1) {
-      total += +`${firstChar}${firstChar}`;
-      return +`${firstChar}${firstChar}`;
+      var n = +(10 * +firstChar) + +firstChar;
+      total += n;
+      return n;
     }
   }
-  // for (const u of input) {
-  //   internal(u);
-  // }
-
-  // input.forEach(internal);
-
-  input.map(newinternal);// using map is not faster
+  input.map(newinternal); // using map is not faster
   // THIS NEW INTERNAL IS LIKE 10 TIMES FASTER
+  console.log(total);
   return total;
 }
+function experimentalInteral(input: string[]) {
+  // .reduce((partialSum, a) => partialSum + a, 0)
+  return input.map((x) =>x.replace(/one/g, "one1one").replace(/two/g, "two2two").replace(/three/g, "three3three").replace(/four/g, "four4four").replace(/five/g, "five5five").replace(/six/g, "six6six").replace(/seven/g, "seven7seven").replace(/eight/g, "eight8eight").replace(/nine/g, "nine9nine").replace(/one/g, "one1one").replace(/two/g, "two2two").replace(/three/g, "three3three").replace(/four/g, "four4four").replace(/five/g, "five5five").replace(/six/g, "six6six").replace(/seven/g, "seven7seven").replace(/eight/g, "eight8eight").replace(/nine/g, "nine9nine").replace(/\D/g, "").replace(/(?<!^).(?!$)/g, "")).map(x => +x).reduce((partialSum, a) => partialSum + a, 0)
+}
+console.log(experimentalInteral(input));
 // func(input);
-// process.exit();
+process.exit();
 const n = 100;
 for (var k = 0; k < 100; k++) {
   var a = 0;
