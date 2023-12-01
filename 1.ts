@@ -1134,18 +1134,45 @@ function func(y: string[]) {
       return +`${firstChar}${firstChar}`;
     }
   }
+  function newinternal(t: string) {
+    t = t
+      .replace(/one/g, "one1one")
+      .replace(/two/g, "two2two")
+      .replace(/three/g, "three3three")
+      .replace(/four/g, "four4four")
+      .replace(/five/g, "five5five")
+      .replace(/six/g, "six6six")
+      .replace(/seven/g, "seven7seven")
+      .replace(/eight/g, "eight8eight")
+      .replace(/nine/g, "nine9nine");
+
+    const newStr = t.replace(/\D/g, "");
+    var firstChar = newStr.substring(0, 1);
+    if (newStr.length > 1) {
+      var lastChar = newStr.substring(newStr.length - 1);
+      var combined = +`${firstChar}${lastChar}`;
+      total += combined;
+      return combined;
+    }
+    if (newStr.length === 1) {
+      total += +`${firstChar}${firstChar}`;
+      return +`${firstChar}${firstChar}`;
+    }
+  }
   // for (const u of input) {
   //   internal(u);
   // }
 
   // input.forEach(internal);
 
-  input.map(internal); // this is not faster lmao
+  input.map(newinternal);// using map is not faster
+  // THIS NEW INTERNAL IS LIKE 10 TIMES FASTER
   return total;
 }
-
+// func(input);
+// process.exit();
 const n = 100;
-for (var k = 0; k < 23; k++) {
+for (var k = 0; k < 100; k++) {
   var a = 0;
   for (var i = 0; i < n; i++) {
     var startTime = performance.now();
