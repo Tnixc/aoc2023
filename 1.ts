@@ -1009,13 +1009,23 @@ const x = [
   "zoneight234",
   "7pqrstsixteen",
 ];
+const x2 = [
+"1abc2",
+"pqr3stu8vwx",
+"a1b2c3d4e5f",
+"treb7uchet"
+
+]
 
 var total = 0;
-for (var t of x) {
+for (var t of x2) {
   console.log(t);
   var pos = 0;
   for (var i = 0; i < t.length; i++) {
     var curr = t.substring(pos, i);
+    if (curr.includes("1") || curr.includes("2") || curr.includes("3") || curr.includes("4") || curr.includes("5") || curr.includes("6") || curr.includes("7") || curr.includes("8") || curr.includes("9")) {
+      break;
+    }
     if (curr.includes("one")) {
       t = t.replace("one", "1");
       break;
@@ -1095,10 +1105,6 @@ for (var t of x) {
       t = t.replace(looking, "9");
       break;
     }
-  }
-
-  for (var i = t.length - 1; i >= 0; i--) {
-    var looking = t.substring(i, pos);
   }
   console.log(t);
   const newStr = t.replace(/\D/g, "");
