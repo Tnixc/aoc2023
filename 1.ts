@@ -1127,3 +1127,4 @@ Is this still O(N) then because it only walks the entire array once?
 
 Pretty sure it is since we drop the constants. And we consider the length of the array not the strings I guess.
 */
+// shit could probably use a .map or .reduce and stuff
