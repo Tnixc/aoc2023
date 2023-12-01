@@ -1012,12 +1012,13 @@ const input = [
 var total = 0;
 for (var t of input) {
   console.log(t);
-  // make it traverse the string left to right then right to left
+  // make it traverse the string left to right then right to left. Exits if found.
+  // MAKE A COUNTER
   console.log(t);
   const newStr = t.replace(/\D/g, "");
-  var firstChar = newStr.substr(0, 1);
+  var firstChar = newStr.substring(0, 1);
   if (newStr.length > 1) {
-    var lastChar = newStr.substr(newStr.length - 1);
+    var lastChar = newStr.substring(newStr.length - 1);
     var combined = +`${firstChar}${lastChar}`;
     total += combined;
   }
