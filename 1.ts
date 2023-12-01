@@ -1117,3 +1117,6 @@ for (var t of input) {
   }
 }
 console.log(total);
+
+// This is probably a very bad approach
+// what is the O(N) of this solution?
