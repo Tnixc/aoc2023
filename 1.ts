@@ -1105,17 +1105,14 @@ for (var t of input) {
 
     // console.log(t);
   }
-  console.log(t);
   const newStr = t.replace(/\D/g, "");
   var firstChar = newStr.substring(0, 1);
   if (newStr.length > 1) {
     var lastChar = newStr.substring(newStr.length - 1);
     var combined = +`${firstChar}${lastChar}`;
-    console.log(combined);
     total += combined;
   }
   if (newStr.length === 1) {
-    console.log(+`${firstChar}${firstChar}`);
     total += +`${firstChar}${firstChar}`;
   }
 }
