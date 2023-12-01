@@ -1014,7 +1014,7 @@ const x2 = ["2lbroneightthree3ninefournineone"];
 function func(y: string[]) {
   const input = y;
   var total = 0;
-  function internal(t:string) {
+  function internal(t: string) {
     var pos = 0;
     for (var i = 0; i < t.length; i++) {
       var curr = t.substring(pos, i);
@@ -1071,7 +1071,6 @@ function func(y: string[]) {
     pos = t.length;
     for (var j = t.length; j > 0; j--) {
       var looking = t.substring(j, pos);
-      // console.log(looking);
       if (
         looking.includes("1") ||
         looking.includes("2") ||
@@ -1127,20 +1126,23 @@ function func(y: string[]) {
     if (newStr.length > 1) {
       var lastChar = newStr.substring(newStr.length - 1);
       var combined = +`${firstChar}${lastChar}`;
-      total += combined;
+      // total += combined;
+      return combined;
     }
     if (newStr.length === 1) {
-      total += +`${firstChar}${firstChar}`;
+      // total += +`${firstChar}${firstChar}`;
+      return +`${firstChar}${firstChar}`;
     }
   }
-  for (const u of input) {
-    internal(u);
-  }
+  // for (const u of input) {
+  //   internal(u);
+  // }
+
+  // input.forEach(internal);
+
+  input.map(internal); // this is not faster lmao
   return total;
 }
-
-
-
 
 const n = 100;
 for (var k = 0; k < 23; k++) {
