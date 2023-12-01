@@ -1014,8 +1014,7 @@ const x2 = ["2lbroneightthree3ninefournineone"];
 function func(y: string[]) {
   const input = y;
   var total = 0;
-  for (var t of input) {
-    // console.log(t);
+  function internal(t:string) {
     var pos = 0;
     for (var i = 0; i < t.length; i++) {
       var curr = t.substring(pos, i);
@@ -1134,11 +1133,15 @@ function func(y: string[]) {
       total += +`${firstChar}${firstChar}`;
     }
   }
+  for (const u of input) {
+    internal(u);
+  }
   return total;
 }
-// const startTime = performance.now();
-// console.log(func(input));
-// const endTime = performance.now();
+
+
+
+
 const n = 100;
 for (var k = 0; k < 23; k++) {
   var a = 0;
