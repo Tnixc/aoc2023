@@ -1010,12 +1010,9 @@ const x = [
   "7pqrstsixteen",
 ];
 
-
 var total = 0;
-for (var t of input) {
+for (var t of x) {
   console.log(t);
-  // make it traverse the string left to right then right to left. Exits if found.
-  // MAKE A COUNTER
   var pos = 0;
   for (var i = 0; i < t.length; i++) {
     var curr = t.substring(pos, i);
@@ -1113,7 +1110,7 @@ for (var t of input) {
     total += combined;
   }
   if (newStr.length === 1) {
-    console.log(firstChar, firstChar);
+    console.log(+`${firstChar}${firstChar}`);
     total += +`${firstChar}${firstChar}`;
   }
 }
