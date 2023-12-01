@@ -1119,4 +1119,9 @@ for (var t of input) {
 console.log(total);
 
 // This is probably a very bad approach
-// what is the O(N) of this solution?
+// what is the big O time complexity of this solution?
+/* 
+so we ave a loop that goes for the length of the array
+then we have 2 loops that traverse the length of the string(assuming worst conditions) 
+Is this still O(N)  then?
+*/
