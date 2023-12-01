@@ -1011,10 +1011,11 @@ const x = [
 ];
 const x2 = ["2lbroneightthree3ninefournineone"];
 
-var total = 0;
-function func(input: string[]) {
+function func(y: string[]) {
+  const input = y;
+  var total = 0;
   for (var t of input) {
-    console.log(t);
+    // console.log(t);
     var pos = 0;
     for (var i = 0; i < t.length; i++) {
       var curr = t.substring(pos, i);
@@ -1121,8 +1122,6 @@ function func(input: string[]) {
         t = t.substring(0, t.lastIndexOf(looking)) + "9";
         break;
       }
-
-      // console.log(t);
     }
     const newStr = t.replace(/\D/g, "");
     var firstChar = newStr.substring(0, 1);
@@ -1135,8 +1134,22 @@ function func(input: string[]) {
       total += +`${firstChar}${firstChar}`;
     }
   }
+  return total;
 }
-console.log(total);
+// const startTime = performance.now();
+// console.log(func(input));
+// const endTime = performance.now();
+const n = 100;
+for (var k = 0; k < 23; k++) {
+  var a = 0;
+  for (var i = 0; i < n; i++) {
+    var startTime = performance.now();
+    func(input);
+    var endTime = performance.now();
+    a = a + (endTime - startTime);
+  }
+  console.log(a / n, "ms");
+}
 
 // This is probably a very bad approach
 // what is the big O time complexity of this solution?
@@ -1147,7 +1160,7 @@ Is this still O(N) then because it only walks the entire array once?
 
 Pretty sure it is since we drop the constants. And we consider the length of the array not the strings I guess.
 */
-// shit could probably use a .map or .reduce and stuff
+// shit could probably use a .map or and stuff
 
 //
 // Part 1
