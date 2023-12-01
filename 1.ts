@@ -1,4 +1,4 @@
-const input = [
+const x = [
   "rhqrpdxsqhgxzknr2foursnrcfthree",
   "2bmckl",
   "four95qvkvveight5",
@@ -1000,7 +1000,7 @@ const input = [
   "twoggvcnfmtrseven4dx",
   "ssevenhcltwoseven2cxrmxxcr",
 ];
-const x = [
+const input = [
   "two1nine",
   "eightwothree",
   "abcone2threexyz",
@@ -1009,6 +1009,8 @@ const x = [
   "zoneight234",
   "7pqrstsixteen",
 ];
+
+
 var total = 0;
 for (var t of input) {
   console.log(t);
@@ -1064,53 +1066,12 @@ for (var t of input) {
     }
   }
   var pos = t.length;
+  for (var j = t.length; i > 0 ; j--) {
+    
+  }
+
   for (var i = t.length - 1; i >= 0; i--) {
-    var curr = t.substring(i, pos);
-    if (curr.includes("one")) {
-      pos = i;
-      t = t.replace("one", "1");
-      break;
-    }
-    if (curr.includes("two")) {
-      pos = i;
-      t = t.replace("two", "2");
-      break;
-    }
-    if (curr.includes("three")) {
-      pos = i;
-      t = t.replace("three", "3");
-      break;
-    }
-    if (curr.includes("four")) {
-      pos = i;
-      t = t.replace("four", "4");
-      break;
-    }
-    if (curr.includes("five")) {
-      pos = i;
-      t = t.replace("five", "5");
-      break;
-    }
-    if (curr.includes("six")) {
-      pos = i;
-      t = t.replace("six", "6");
-      break;
-    }
-    if (curr.includes("seven")) {
-      pos = i;
-      t = t.replace("seven", "7");
-      break;
-    }
-    if (curr.includes("eight")) {
-      pos = i;
-      t = t.replace("eight", "8");
-      break;
-    }
-    if (curr.includes("nine")) {
-      pos = i;
-      t = t.replace("nine", "9");
-      break;
-    }
+    var looking = t.substring(i, pos);
   }
   console.log(t);
   const newStr = t.replace(/\D/g, "");
