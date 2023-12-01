@@ -1,5 +1,5 @@
 const input = [
-  "rhqrpdxsqhgxzknr2foursnrcfthree",
+"rhqrpdxsqhgxzknr2foursnrcfthree",
 "2bmckl",
 "four95qvkvveight5",
 "2tqbxgrrpmxqfglsqjkqthree6nhjvbxpflhr1eightwohr",
@@ -1010,14 +1010,11 @@ const x = [
   "7pqrstsixteen",
 ];
 const x2 = [
-  "1abc2",
-  "pqr3stu8vwx",
-  "a1b2c3d4e5f",
-  "treb7uchet"
+  "2lbroneightthree3ninefournineone"
 ]
 
 var total = 0;
-for (var t of x2) {
+for (var t of input) {
   console.log(t);
   var pos = 0;
   for (var i = 0; i < t.length; i++) {
@@ -1062,48 +1059,51 @@ for (var t of x2) {
       break;
     }
   }
-  var pos = t.length;
+  pos = t.length;
   for (var j = t.length; j > 0 ; j--) {
     var looking = t.substring(j, pos);
+    // console.log(looking);
     if (looking.includes("1") || looking.includes("2") || looking.includes("3") || looking.includes("4") || looking.includes("5") || looking.includes("6") || looking.includes("7") || looking.includes("8") || looking.includes("9")) {
       break;
     }
     if (looking.includes("one")) {
-      t = t.replace(looking, "1");
+      t = t.substring(0, t.lastIndexOf(looking)) + "1";
       break;
     }
     if (looking.includes("two")) {
-      t = t.replace(looking, "2");
+      t = t.substring(0, t.lastIndexOf(looking)) + "2";
       break;
     }
     if (looking.includes("three")) {
-      t = t.replace(looking, "3");
+      t = t.substring(0, t.lastIndexOf(looking)) + "3";
       break;
     }
     if (looking.includes("four")) {
-      t = t.replace(looking, "4");
+      t = t.substring(0, t.lastIndexOf(looking)) + "4";
       break;
     }
     if (looking.includes("five")) {
-      t = t.replace(looking, "5");
+      t = t.substring(0, t.lastIndexOf(looking)) + "5";
       break;
     }
     if (looking.includes("six")) {
-      t = t.replace(looking, "6");
+      t = t.substring(0, t.lastIndexOf(looking)) + "6";
       break;
     }
     if (looking.includes("seven")) {
-      t = t.replace(looking, "7");
+      t = t.substring(0, t.lastIndexOf(looking)) + "7";
       break;
     }
     if (looking.includes("eight")) {
-      t = t.replace(looking, "8");
+      t = t.substring(0, t.lastIndexOf(looking)) + "8";
       break;
     }
     if (looking.includes("nine")) {
-      t = t.replace(looking, "9");
+      t = t.substring(0, t.lastIndexOf(looking)) + "9";
       break;
     }
+
+    // console.log(t);
   }
   console.log(t);
   const newStr = t.replace(/\D/g, "");
