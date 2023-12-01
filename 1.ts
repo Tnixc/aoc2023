@@ -1009,7 +1009,8 @@ const x = [
   "zoneight234",
   "7pqrstsixteen",
 ];
-const x2 = ["2lbroneightthree3ninefournineone"];
+const x2 = ["2lbroneightthree3ninefournineone","one","22"];
+
 function internal(t: string) {
   var pos = 0;
   for (var i = 0; i < t.length; i++) {
@@ -1160,22 +1161,22 @@ function func(input: string[]) {
   }
   input.map(newinternal); // using map is not faster
   // THIS NEW INTERNAL IS LIKE 10 TIMES FASTER
-  console.log(total);
   return total;
 }
 function experimentalInteral(input: string[]) {
-  // .reduce((partialSum, a) => partialSum + a, 0)
-  return input.map((x) =>x.replace(/one/g, "one1one").replace(/two/g, "two2two").replace(/three/g, "three3three").replace(/four/g, "four4four").replace(/five/g, "five5five").replace(/six/g, "six6six").replace(/seven/g, "seven7seven").replace(/eight/g, "eight8eight").replace(/nine/g, "nine9nine").replace(/one/g, "one1one").replace(/two/g, "two2two").replace(/three/g, "three3three").replace(/four/g, "four4four").replace(/five/g, "five5five").replace(/six/g, "six6six").replace(/seven/g, "seven7seven").replace(/eight/g, "eight8eight").replace(/nine/g, "nine9nine").replace(/\D/g, "").replace(/(?<!^).(?!$)/g, "")).map(x => +x).reduce((partialSum, a) => partialSum + a, 0)
+  return input.map(x => x.replace(/one/g, "one1one").replace(/two/g, "two2two").replace(/three/g, "three3three").replace(/four/g, "four4four").replace(/five/g, "five5five").replace(/six/g, "six6six").replace(/seven/g, "seven7seven").replace(/eight/g, "eight8eight").replace(/nine/g, "nine9nine").replace(/\D/g, "")).map(x => x[0]+x[x.length - 1]).map(x => +x).reduce((partialSum, a) => partialSum + a, 0)
 }
-console.log(experimentalInteral(input));
+const f = x => x.map(x => x.replace(/one/g, "one1one").replace(/two/g, "two2two").replace(/three/g, "three3three").replace(/four/g, "four4four").replace(/five/g, "five5five").replace(/six/g, "six6six").replace(/seven/g, "seven7seven").replace(/eight/g, "eight8eight").replace(/nine/g, "nine9nine").replace(/\D/g, "")).map(x => x[0]+x[x.length - 1]).map(x => +x).reduce((partialSum, a) => partialSum + a, 0)
+
+// console.log(f(input));
 // func(input);
-process.exit();
+// process.exit();
 const n = 100;
 for (var k = 0; k < 100; k++) {
   var a = 0;
   for (var i = 0; i < n; i++) {
     var startTime = performance.now();
-    func(input);
+    f(input);
     var endTime = performance.now();
     a = a + (endTime - startTime);
   }
