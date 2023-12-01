@@ -1163,20 +1163,18 @@ function func(input: string[]) {
   // THIS NEW INTERNAL IS LIKE 10 TIMES FASTER
   return total;
 }
-function experimentalInteral(input: string[]) {
-  return input.map(x => x.replace(/one/g, "one1one").replace(/two/g, "two2two").replace(/three/g, "three3three").replace(/four/g, "four4four").replace(/five/g, "five5five").replace(/six/g, "six6six").replace(/seven/g, "seven7seven").replace(/eight/g, "eight8eight").replace(/nine/g, "nine9nine").replace(/\D/g, "")).map(x => x[0]+x[x.length - 1]).map(x => +x).reduce((partialSum, a) => partialSum + a, 0)
-}
-const f = x => x.map(x => x.replace(/one/g, "one1one").replace(/two/g, "two2two").replace(/three/g, "three3three").replace(/four/g, "four4four").replace(/five/g, "five5five").replace(/six/g, "six6six").replace(/seven/g, "seven7seven").replace(/eight/g, "eight8eight").replace(/nine/g, "nine9nine").replace(/\D/g, "")).map(x => x[0]+x[x.length - 1]).map(x => +x).reduce((partialSum, a) => partialSum + a, 0)
+
+console.log(input.map(x => x.replace(/one/g, "one1one").replace(/two/g, "two2two").replace(/three/g, "three3three").replace(/four/g, "four4four").replace(/five/g, "five5five").replace(/six/g, "six6six").replace(/seven/g, "seven7seven").replace(/eight/g, "eight8eight").replace(/nine/g, "nine9nine").replace(/\D/g, "")).map(x => x[0]+x[x.length - 1]).map(x => +x).reduce((partialSum, a) => partialSum + a, 0));
 
 // console.log(f(input));
 // func(input);
-// process.exit();
+process.exit();
 const n = 100;
 for (var k = 0; k < 100; k++) {
   var a = 0;
   for (var i = 0; i < n; i++) {
     var startTime = performance.now();
-    f(input);
+    func(input);
     var endTime = performance.now();
     a = a + (endTime - startTime);
   }
