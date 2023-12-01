@@ -1010,15 +1010,10 @@ const input = [
   "7pqrstsixteen",
 ];
 var total = 0;
-const nums: string[] = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 for (var t of input) {
-  console.log(t)
-  for (var n of nums) {
-    if (t.includes(n)) {
-      t = t.replace(n, "X");
-    }
-  }
-  console.log(t)
+  console.log(t);
+  // make it traverse the string left to right then right to left
+  console.log(t);
   const newStr = t.replace(/\D/g, "");
   var firstChar = newStr.substr(0, 1);
   if (newStr.length > 1) {
@@ -1030,3 +1025,4 @@ for (var t of input) {
     total += +`${firstChar}${firstChar}`;
   }
 }
+console.log(total);
