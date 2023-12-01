@@ -1,4 +1,4 @@
-const x = [
+const input = [
   "rhqrpdxsqhgxzknr2foursnrcfthree",
   "2bmckl",
   "four95qvkvveight5",
@@ -1000,7 +1000,7 @@ const x = [
   "twoggvcnfmtrseven4dx",
   "ssevenhcltwoseven2cxrmxxcr",
 ];
-const input = [
+const x = [
   "two1nine",
   "eightwothree",
   "abcone2threexyz",
@@ -1014,6 +1014,104 @@ for (var t of input) {
   console.log(t);
   // make it traverse the string left to right then right to left. Exits if found.
   // MAKE A COUNTER
+  var pos = 0;
+  for (var i = 0; i < t.length; i++) {
+    var curr = t.substring(pos, i);
+    if (curr.includes("one")) {
+      pos = i;
+      t = t.replace("one", "1");
+      break;
+    }
+    if (curr.includes("two")) {
+      pos = i;
+      t = t.replace("two", "2");
+      break;
+    }
+    if (curr.includes("three")) {
+      pos = i;
+      t = t.replace("three", "3");
+      break;
+    }
+    if (curr.includes("four")) {
+      pos = i;
+      t = t.replace("four", "4");
+      break;
+    }
+    if (curr.includes("five")) {
+      pos = i;
+      t = t.replace("five", "5");
+      break;
+    }
+    if (curr.includes("six")) {
+      pos = i;
+      t = t.replace("six", "6");
+      break;
+    }
+    if (curr.includes("seven")) {
+      pos = i;
+      t = t.replace("seven", "7");
+      break;
+    }
+    if (curr.includes("eight")) {
+      pos = i;
+      t = t.replace("eight", "8");
+      break;
+    }
+    if (curr.includes("nine")) {
+      pos = i;
+      t = t.replace("nine", "9");
+      break;
+    }
+  }
+  var pos = t.length;
+  for (var i = t.length - 1; i >= 0; i--) {
+    var curr = t.substring(i, pos);
+    if (curr.includes("one")) {
+      pos = i;
+      t = t.replace("one", "1");
+      break;
+    }
+    if (curr.includes("two")) {
+      pos = i;
+      t = t.replace("two", "2");
+      break;
+    }
+    if (curr.includes("three")) {
+      pos = i;
+      t = t.replace("three", "3");
+      break;
+    }
+    if (curr.includes("four")) {
+      pos = i;
+      t = t.replace("four", "4");
+      break;
+    }
+    if (curr.includes("five")) {
+      pos = i;
+      t = t.replace("five", "5");
+      break;
+    }
+    if (curr.includes("six")) {
+      pos = i;
+      t = t.replace("six", "6");
+      break;
+    }
+    if (curr.includes("seven")) {
+      pos = i;
+      t = t.replace("seven", "7");
+      break;
+    }
+    if (curr.includes("eight")) {
+      pos = i;
+      t = t.replace("eight", "8");
+      break;
+    }
+    if (curr.includes("nine")) {
+      pos = i;
+      t = t.replace("nine", "9");
+      break;
+    }
+  }
   console.log(t);
   const newStr = t.replace(/\D/g, "");
   var firstChar = newStr.substring(0, 1);
