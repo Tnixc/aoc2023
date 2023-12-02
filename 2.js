@@ -149,12 +149,6 @@ for (const item of games) {
     total = total + +item[0];
   }
 }
-games = input
-  .split("\n")
-  .map((game) => game.split(":"))
-  .map((x) => x.map((y) => y.replace(/\s/g, "")));
-
-total = 0;
 console.log(
   input
     .split("\n")
