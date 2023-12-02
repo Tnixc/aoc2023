@@ -149,8 +149,47 @@ for (const item of games) {
     total = total + +item[0];
   }
 }
+games = input
+  .split("\n")
+  .map((game) => game.split(":"))
+  .map((x) => x.map((y) => y.replace(/\s/g, "")));
 
-console.log(total);
+total = 0;
+console.log(
+  input
+    .split("\n")
+    .map((game) => game.split(":"))
+    .map((x) => x.map((y) => y.replace(/\s/g, "")))
+    .map((x) => [+x[0].replace("Game", ""), x[1]])
+    .map((x) => [x[0], x[1].split(";")])
+    .map((x) => [x[0], x[1].map((y) => y.split(","))])
+    .map((x) => [
+      x[0],
+      x[1].map((y) =>
+        y.map((z) =>
+          z.includes("red")
+            ? +z.replace("red", "") > avalible.red
+              ? null
+              : z
+            : z.includes("blue")
+            ? +z.replace("blue", "") > avalible.blue
+              ? null
+              : z
+            : z.includes("green")
+            ? +z.replace("green", "") > avalible.green
+              ? null
+              : z
+            : z
+        )
+      ),
+    ])
+    .map((x) => [x[0], x[1].flat()])
+    .map((x) => [x[0], x[1].includes(null) ? false : x[1]])
+    .map((x) => x.flat(2))
+    .map((x) => (x[1] === false ? 0 : x[0]))
+    .reduce((a, b) => a + b)
+);
+// console.log(total);
 
 var power = 0;
 games = input
