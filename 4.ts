@@ -232,22 +232,7 @@ function run() {
 }
 
 // run()
-var y = []
-function run2() {
-  for (const card of ex) {
-    const index = ex.indexOf(card);
-    const array1 = card[0];
-    const array2 = card[1];
-    const valid = array1.filter((value) => array2.includes(value)).length;
-    const sliced = ex.slice(0, index);
-    const next = ex.slice(index, ex.length)
-    if (valid >= 1) {
-      for (var i = 0; i <= valid; i++) {
-        sliced.push(ex[i])
-      }
-    }
-    ex = sliced.concat(next)
-  }
+const len = 193
+for (let i = 0; i < len; i++) {
+  console.log(ex[i])
 }
-run2();
-console.log(ex.length)
